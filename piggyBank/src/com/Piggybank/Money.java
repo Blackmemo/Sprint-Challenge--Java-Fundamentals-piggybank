@@ -4,11 +4,12 @@ public abstract class Money
 {
     int amount;
     double value;
-    double balance;
     String name;
 
-    public Money(int amount)
+    public Money(int amount, String name, double value)
     {
+        this.name = name;
+        this.value = value;
         this.amount = amount;
     }
 
@@ -19,7 +20,7 @@ public abstract class Money
 
     public String getAmount()
     {
-        return this.amount + " ";
+        return this.amount + " " + this.name;
     }
 
     public double getValue()
@@ -37,6 +38,12 @@ public abstract class Money
     public String getName()
     {
         return name;
+    }
+
+    @Override
+    public String toString()
+    {
+        return amount + " " + name;
     }
 
 }
